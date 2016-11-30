@@ -9,6 +9,7 @@ import java.sql.*;
 /**
  * Created by t00191729 on 24/11/2016.
  */
+
 public class OracleLordDAO implements LordDAO {
 
     private Connection con;
@@ -28,6 +29,7 @@ public class OracleLordDAO implements LordDAO {
             stm.execute();
             return true;
         } catch (SQLException e) {
+            //OCDConsole.printlnError(e.getMessage());
             //TODO error message
         } finally {
             OracleDAOFactory.closeStatement(stm);
@@ -48,6 +50,7 @@ public class OracleLordDAO implements LordDAO {
             int lordID = stm.getInt(1);
             lord = find(lordID);
         } catch (SQLException e) {
+            //OCDConsole.printlnError(e.getMessage());
             //TODO error message
         } finally {
             OracleDAOFactory.closeStatement(stm);
@@ -65,6 +68,7 @@ public class OracleLordDAO implements LordDAO {
             stm.execute();
             return true;
         } catch (SQLException e) {
+            //OCDConsole.printlnError(e.getMessage());
             //TODO error message
         }
         return false;
@@ -88,6 +92,7 @@ public class OracleLordDAO implements LordDAO {
                 );
             }
         } catch (SQLException e) {
+            //OCDConsole.printlnError(e.getMessage());
             //TODO error message
         } finally {
             OracleDAOFactory.closeResultSet(rs);

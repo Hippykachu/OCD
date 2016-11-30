@@ -1,10 +1,23 @@
 package dao.oracle;
 
 import dao.DAOFactory;
+
 import dao.interfaces.LordDAO;
+import dao.interfaces.AdventurerDAO;
+import dao.interfaces.EntityDAO;
+import dao.interfaces.MonsterDAO;
+import dao.interfaces.InventoryDAO;
+import dao.interfaces.ItemDAO;
+
 import dao.oracle.dao.OracleLordDAO;
+import dao.oracle.dao.OracleAdventurerDAO;
+import dao.oracle.dao.OracleEntityDAO;
+import dao.oracle.dao.OracleMonsterDAO;
+import dao.oracle.dao.OracleInventoryDAO;
+import dao.oracle.dao.OracleItemDAO;
 
 import java.sql.*;
+
 
 /**
  * Created by t00191729 on 24/11/2016.
@@ -18,9 +31,9 @@ public class OracleDAOFactory extends DAOFactory {
 
     public OracleDAOFactory() {
         con = getConnection();
-        connectionUrl = "adress";
-        username = "test";
-        password = "test";
+        connectionUrl = "address";
+        username = "username";
+        password = "password";
     }
 
     @Override
@@ -28,17 +41,41 @@ public class OracleDAOFactory extends DAOFactory {
         return new OracleLordDAO();
     }
 
+   /* @Override
+    public AdventurerDAO getAdventurerDAO() {
+        return new OracleAdventurerDAO();
+    }
+
+    @Override
+    public EntityDAO getEntityDAO() {
+        return new OracleEntityDAO();
+    }
+
+    @Override
+    public MonsterDAO getMonsterDAO() {
+        return new OracleMonsterDAO();
+    }
+
+    @Override
+    public InventoryDAO getInventoryDAO() {
+        return new OracleInventoryDAO();
+    }
+    @Override
+    public ItemDAO getItemDAO() {
+        return new OracleItemDAO();
+    }*/
+
     public static Connection getConnection() {
         if(con == null) {
             try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
                 con = DriverManager.getConnection("jdbc:oracle:thin:@" + connectionUrl, username, password);
-                OCDConsole.printlnSuccess("Successfully connected to the database!");
+                LayoutController.printlnSucess("Successfully connected to the database!");
                 return con;
             } catch (ClassNotFoundException e) {
-                OCDConsole.printlnError("Where is your Oracle JDBC Driver?");
+               // OCDConsole.printlnError("Where is your Oracle JDBC Driver?");
             } catch (SQLException e) {
-                OCDConsole.printlnError("Connection to database failed: " + e.getMessage());
+               // OCDConsole.printlnError("Connection to database failed: " + e.getMessage());
             }
             return null;
         } else {
@@ -52,7 +89,7 @@ public class OracleDAOFactory extends DAOFactory {
                 con.close();
             }
         } catch (SQLException e) {
-            OCDConsole.printlnError("Error closing the connection: " + e.getMessage());
+            //OCDConsole.printlnError("Error closing the connection: " + e.getMessage());
         }
     }
 
@@ -62,7 +99,7 @@ public class OracleDAOFactory extends DAOFactory {
                 stm.close();
             }
         } catch (SQLException e) {
-            OCDConsole.printlnError("Error closing statement");
+            //OCDConsole.printlnError("Error closing statement");
         }
     }
 
@@ -72,7 +109,7 @@ public class OracleDAOFactory extends DAOFactory {
                 rs.close();
             }
         } catch (SQLException e) {
-            OCDConsole.printlnError("Error closing resultSet");
+            //OCDConsole.printlnError("Error closing resultSet");
         }
     }
 }
