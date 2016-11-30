@@ -32,7 +32,7 @@ public class StartScreenController implements Initializable{
 
     @FXML private void handleCreateLord(ActionEvent actionEvent) {
         daoFactory.getLordDAO().createLord(createLordLogin.getText(), createLordPassword.getText(), createLordPassword2.getText());
-        LayoutController.afficherErreur();
+        //LayoutController.afficherErreur();
     }
 
     @FXML private void handleLoginLord(ActionEvent actionEvent) {

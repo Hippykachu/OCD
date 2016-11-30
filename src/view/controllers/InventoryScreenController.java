@@ -19,7 +19,6 @@ public class InventoryScreenController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     @FXML private void handleCreateLord(ActionEvent actionEvent) {
@@ -27,6 +26,5 @@ public class InventoryScreenController implements Initializable{
     }
 
     @FXML private void handleLoginLord(ActionEvent actionEvent) {
-
     }
 }

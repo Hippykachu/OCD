@@ -1,15 +1,23 @@
 package view.controllers;
 
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
 /**
  * Created by t00191729 on 30/11/2016.
  */
+
+
+
 public class LayoutController {
 
-    public static void afficherErreur(String msg) {
-        setText(msg);
-    }
+    @FXML static Label errorLogLayout;
 
-    public static void printlnSucess(String msg) {
-
+    @FXML public static void printError(String msg) {
+        errorLogLayout.setText(msg);
     }
 }

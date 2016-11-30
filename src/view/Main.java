@@ -32,7 +32,7 @@ public class Main extends Application {
             try {
                // Load layout from fxml file.
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(Main.class.getResource("view/Layout.fxml"));
+                loader.setLocation(Main.class.getResource("view/screens/Layout.fxml"));
                 layout = (BorderPane) loader.load();
 
                 // Show the scene containing the layout.
@@ -51,11 +51,11 @@ public class Main extends Application {
             try {
                 // Load start screen.
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(Main.class.getResource("view/StartScreen.fxml"));
+                loader.setLocation(Main.class.getResource("view/screens/StartScreen.fxml"));
                 AnchorPane startScreen = (AnchorPane) loader.load();
 
-                // Set start screen into the center of root layout.
-                layout.setCenter(startScreen);
+                // Set startScreen into the top of root layout.
+                layout.setTop(startScreen);
             } catch (IOException e) {
                 e.printStackTrace();
             }

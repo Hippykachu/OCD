@@ -4,6 +4,7 @@ import dao.entities.Adventurer;
 import dao.entities.Lord;
 import dao.interfaces.AdventurerDAO;
 import dao.oracle.OracleDAOFactory;
+import view.controllers.LayoutController;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.List;
 /**
  * Created by hugoc on 28/11/2016.
  */
+
 public class OracleAdventurerDAO implements AdventurerDAO {
     private Connection con;
 
@@ -29,7 +31,7 @@ public class OracleAdventurerDAO implements AdventurerDAO {
             stm.execute();
             return true;
         } catch (SQLException e) {
-            OCDConsole.printlnError(e.getMessage());
+            LayoutController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(stm);
         }
@@ -46,7 +48,7 @@ public class OracleAdventurerDAO implements AdventurerDAO {
             stm.execute();
             return true;
         } catch (SQLException e) {
-            OCDConsole.printlnError(e.getMessage());
+            LayoutController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(stm);
         }
@@ -62,7 +64,7 @@ public class OracleAdventurerDAO implements AdventurerDAO {
             stm.execute();
             return true;
         } catch (SQLException e) {
-            OCDConsole.printlnError(e.getMessage());
+            LayoutController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(stm);
         }
@@ -78,7 +80,7 @@ public class OracleAdventurerDAO implements AdventurerDAO {
             stm.execute();
             return true;
         } catch (SQLException e) {
-            OCDConsole.printlnError(e.getMessage());
+            LayoutController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(stm);
         }
@@ -105,7 +107,7 @@ public class OracleAdventurerDAO implements AdventurerDAO {
                 ));
             }
         } catch (SQLException e) {
-            OCDConsole.printlnError(e.getMessage());
+            LayoutController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeResultSet(rs);
             OracleDAOFactory.closeStatement(stm);
@@ -126,7 +128,7 @@ public class OracleAdventurerDAO implements AdventurerDAO {
             int returnId = cStm.getInt(1);
             result = find(returnId);
         } catch (SQLException e) {
-            OCDConsole.printlnError(e.getMessage());
+            LayoutController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(cStm);
         }
@@ -154,7 +156,7 @@ public class OracleAdventurerDAO implements AdventurerDAO {
                 return result;
             }
         } catch (SQLException e) {
-            OCDConsole.printlnError(e.getMessage());
+            LayoutController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeResultSet(rs);
             OracleDAOFactory.closeStatement(pStm);

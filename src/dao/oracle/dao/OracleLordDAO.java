@@ -3,6 +3,7 @@ package dao.oracle.dao;
 import dao.entities.Lord;
 import dao.interfaces.LordDAO;
 import dao.oracle.OracleDAOFactory;
+import view.controllers.LayoutController;
 
 import java.sql.*;
 
@@ -29,8 +30,7 @@ public class OracleLordDAO implements LordDAO {
             stm.execute();
             return true;
         } catch (SQLException e) {
-            //OCDConsole.printlnError(e.getMessage());
-            //TODO error message
+            LayoutController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(stm);
         }
@@ -50,8 +50,7 @@ public class OracleLordDAO implements LordDAO {
             int lordID = stm.getInt(1);
             lord = find(lordID);
         } catch (SQLException e) {
-            //OCDConsole.printlnError(e.getMessage());
-            //TODO error message
+            LayoutController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(stm);
         }
@@ -68,8 +67,7 @@ public class OracleLordDAO implements LordDAO {
             stm.execute();
             return true;
         } catch (SQLException e) {
-            //OCDConsole.printlnError(e.getMessage());
-            //TODO error message
+            LayoutController.printError(e.getMessage());
         }
         return false;
     }
@@ -92,8 +90,7 @@ public class OracleLordDAO implements LordDAO {
                 );
             }
         } catch (SQLException e) {
-            //OCDConsole.printlnError(e.getMessage());
-            //TODO error message
+            LayoutController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeResultSet(rs);
             OracleDAOFactory.closeStatement(stm);
