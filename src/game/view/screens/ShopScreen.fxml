@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.view.controllers.ShopScreenController">
+   <children>
+       <Button fx:id="BackShopButton" layoutX="251.0" layoutY="63.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="78.0" text="Back" />
+       <TextArea fx:id="ShopLordName" layoutX="14.0" layoutY="16.0" prefHeight="47.0" prefWidth="316.0" />
+       <TextArea fx:id="ShopAdventurerName" layoutX="14.0" layoutY="63.0" prefHeight="36.0" prefWidth="237.0" />
+       <ProgressBar fx:id="AdventurerLifeShop" layoutX="14.0" layoutY="99.0" prefHeight="17.0" prefWidth="237.0" progress="0.0" />
+       <TableView fx:id="BuyTable" layoutX="507.0" layoutY="300.0" prefHeight="200.0" prefWidth="229.0">
+           <columns>
+               <TableColumn prefWidth="75.0" text="Item" />
+               <TableColumn prefWidth="75.0" text="Type" />
+           </columns>
+       </TableView>
+       <TableView fx:id="EquipmentTable" layoutX="57.0" layoutY="300.0" prefHeight="200.0" prefWidth="229.0">
+           <columns>
+               <TableColumn prefWidth="75.0" text="Item" />
+               <TableColumn prefWidth="75.0" text="Type" />
+           </columns>
+       </TableView>
+       <Label fx:id="SellTable" layoutX="143.0" layoutY="264.0" text="Sell" />
+       <Label layoutX="593.0" layoutY="264.0" text="Buy" />
+       <Label layoutX="536.0" layoutY="55.0" text="Welcom in the Shop !" />
+   </children>
+</AnchorPane>
