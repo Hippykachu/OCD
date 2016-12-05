@@ -111,6 +111,7 @@ public class MainController {
             SubController controller = loader.getController();
             controller.setMainController(this);
             controller.setDAOFactory(daoFactory);
+            controller.init();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -129,6 +130,7 @@ public class MainController {
             SubController controller = loader.getController();
             controller.setMainController(this);
             controller.setDAOFactory(daoFactory);
+            controller.init();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -147,6 +149,7 @@ public class MainController {
             SubController controller = loader.getController();
             controller.setMainController(this);
             controller.setDAOFactory(daoFactory);
+            controller.init();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -165,11 +168,30 @@ public class MainController {
             SubController controller = loader.getController();
             controller.setMainController(this);
             controller.setDAOFactory(daoFactory);
+            controller.init();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    public void showlootScreen() {
+        try {
+            // Load start screen.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/screens/LootScreen.fxml"));
+            AnchorPane LootScreen = loader.load();
 
+            // Set startScreen into the top of root layout.
+            Layout.setTop(LootScreen);
+
+            //Give Controller access to main
+            SubController controller = loader.getController();
+            controller.setMainController(this);
+            controller.setDAOFactory(daoFactory);
+            controller.init();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public static void printError(String msg) {
         if(layoutController != null) {
             layoutController.printError(msg);

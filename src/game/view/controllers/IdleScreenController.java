@@ -48,8 +48,8 @@ public class IdleScreenController extends SubController implements Initializable
 
     @Override
     public void init() {
-        idleLordName.setText(mainController.currentLord.getLogin());
-        idleAdventurerName.setText(mainController.currentAdventurer.getName());
+        idleLordName.setText("Lord == " + mainController.currentLord.getLogin());
+        idleAdventurerName.setText("Adventurer == " + mainController.currentAdventurer.getName());
         Entity entity = daoFactory.getEntityDAO().find(mainController.currentAdventurer.getEntityID());
         idleAdventurerLife.setProgress(entity.getHealthProgress());
     }

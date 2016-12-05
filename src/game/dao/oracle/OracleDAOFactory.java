@@ -36,7 +36,7 @@ public class OracleDAOFactory extends DAOFactory {
         connectionUrl = "localhost";
         username = "hippykachuOCD";
         password = "ocd";
-    }
+        }
 
     @Override
     public LordDAO getLordDAO() {
@@ -72,6 +72,7 @@ public class OracleDAOFactory extends DAOFactory {
             try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
                 con = DriverManager.getConnection("jdbc:oracle:thin:@" + connectionUrl, username, password);
+                //con = DriverManager.getConnection("jdbc:oracle:thin:[hippykachuOCD/ocd]@[//]localhost[:1521][/XE]");
                 MainController.printError("Successfully connected to the database!");
                 return con;
             } catch (ClassNotFoundException e) {

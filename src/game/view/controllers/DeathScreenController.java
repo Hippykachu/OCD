@@ -10,24 +10,14 @@ import java.util.ResourceBundle;
 
 public class DeathScreenController extends SubController implements Initializable{
 
-    @FXML private TextField createLordLogin;
-    @FXML private TextField createLordPassword;
-    @FXML private TextField createLordPassword2;
-
-    @FXML private TextField connectLordLogin;
-    @FXML private TextField connectLordPassword;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
-    @FXML private void handleCreateLord(ActionEvent actionEvent) {
-
-    }
-
-    @FXML private void handleLoginLord(ActionEvent actionEvent) {
-
+    @FXML private void handleWastedButton(ActionEvent actionEvent) {
+        mainController.showAdventurerScreen();
     }
 
     @Override

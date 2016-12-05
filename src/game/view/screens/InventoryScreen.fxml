@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.view.controllers.InventoryScreenController">
+<AnchorPane maxHeight="800" maxWidth="800" minHeight="800" minWidth="800" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.view.controllers.InventoryScreenController">
    <children>
-      <Button fx:id="BackInventoryButton" layoutX="251.0" layoutY="63.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="78.0" text="Back" />
-      <TextArea fx:id="InventoryLordName" layoutX="14.0" layoutY="16.0" prefHeight="47.0" prefWidth="316.0" />
-      <TextArea fx:id="InventoryAdventurerName" layoutX="14.0" layoutY="63.0" prefHeight="36.0" prefWidth="237.0" />
-      <ProgressBar fx:id="InventoryAdventurerLife" layoutX="14.0" layoutY="99.0" prefHeight="17.0" prefWidth="237.0" progress="0.0" />
-      <TableView fx:id="InventoryTable" layoutX="37.0" layoutY="490.0" prefHeight="200.0" prefWidth="229.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="Item" />
-          <TableColumn prefWidth="75.0" text="Type" />
-        </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
-      </TableView>
-      <TableView fx:id="EquipmentTable" layoutX="37.0" layoutY="200.0" prefHeight="200.0" prefWidth="229.0">
-         <columns>
-            <TableColumn prefWidth="75.0" text="Item" />
-            <TableColumn prefWidth="75.0" text="Type" />
-            <TableColumn prefWidth="75.0" text="Column X" />
-         </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
-      </TableView>
-      <Label layoutX="44.0" layoutY="183.0" text="Equipment" />
-      <Label layoutX="37.0" layoutY="461.0" text="Inventory" />
-      <Label layoutX="536.0" layoutY="55.0" text="This is your adventurer inventory !" />
+      <Button layoutX="537.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleBackInventoryButton" prefWidth="250.0" text="OCD:&gt;Back">
+      <font>
+         <Font name="Courier New Bold" size="24.0" />
+      </font></Button>
+      <ProgressBar fx:id="inventoryAdventurerLife" layoutX="14.0" layoutY="99.0" prefHeight="18.0" prefWidth="354.0" progress="0.44" />
+      <Label fx:id="inventoryLordName" layoutX="14.0" layoutY="18.0" prefHeight="47.0" prefWidth="354.0" text="OCD:&gt; Lord Name" textFill="#eb0909">
+         <font>
+            <Font name="Courier New Bold" size="30.0" />
+         </font></Label>
+      <Label fx:id="inventoryAdventurerName" layoutX="14.0" layoutY="63.0" prefHeight="36.0" prefWidth="354.0" text="OCD:&gt; Adventurer Name" textFill="#14a12e">
+         <font>
+            <Font name="Courier New" size="24.0" />
+         </font></Label>
+      <Label layoutX="33.0" layoutY="178.0" text="Equipment" textFill="#4dcd16" />
+      <Label layoutX="37.0" layoutY="420.0" text="Inventory" textFill="#1be044" />
+      <Label alignment="CENTER" layoutX="400.0" layoutY="76.0" prefHeight="47.0" prefWidth="367.0" text="This is your inventory" textFill="#0eff06">
+         <font>
+            <Font name="Courier New Bold" size="24.0" />
+         </font></Label>
+      <Label fx:id="inventoryBalance" alignment="CENTER" layoutX="527.0" layoutY="123.0" prefHeight="23.0" prefWidth="142.0" text="Balance" textFill="#11e81c">
+         <font>
+            <Font name="Courier New" size="18.0" />
+         </font></Label>
+      <Pane layoutX="50.0" layoutY="206.0" prefHeight="200.0" prefWidth="700.0">
+         <children>
+            <fx:include fx:id="equipmentTab" source="TableViews.fxml" />
+         </children>
+      </Pane>
+      <Pane layoutX="50.0" layoutY="471.0" prefHeight="200.0" prefWidth="700.0">
+         <children>
+            <fx:include fx:id="inventoryTab" source="TableViews.fxml" />
+         </children></Pane>
    </children>
 </AnchorPane>

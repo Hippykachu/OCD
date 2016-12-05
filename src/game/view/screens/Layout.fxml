@@ -12,9 +12,9 @@
 
 <BorderPane maxHeight="900.0" maxWidth="800.0" minHeight="900.0" minWidth="800.0" prefHeight="900.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.view.controllers.LayoutController">
    <bottom>
-      <Label fx:id="ErrorLogLayout" maxHeight="100.0" maxWidth="800.0" minHeight="100.0" minWidth="800.0" prefHeight="100.0" prefWidth="800.0" text="Error Log" textFill="#ee0303" BorderPane.alignment="CENTER">
+      <Label fx:id="ErrorLogLayout" alignment="CENTER" contentDisplay="CENTER" maxHeight="100.0" maxWidth="800.0" minHeight="100.0" minWidth="800.0" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: black;" text="Control Log" textFill="#54c223" BorderPane.alignment="CENTER">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
    </bottom>
