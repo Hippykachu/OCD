@@ -33,9 +33,9 @@ public class OracleDAOFactory extends DAOFactory {
 
     public OracleDAOFactory() {
         con = getConnection();
-        connectionUrl = "172.17.99.2";
-        username = "x1QG1x";
-        password = "lan123";
+        connectionUrl = "localhost";
+        username = "hippykachuOCD";
+        password = "ocd";
     }
 
     @Override
