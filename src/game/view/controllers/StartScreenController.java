@@ -12,13 +12,7 @@ import game.dao.entities.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class StartScreenController implements Initializable{
-
-    public DAOFactory daoFactory;
-
-    public StartScreenController(DAOFactory daoFactory) {
-        this.daoFactory = daoFactory;
-    }
+public class StartScreenController extends SubController implements Initializable{
 
     @FXML private TextField createLordLogin;
     @FXML private PasswordField createLordPassword1;
@@ -41,13 +35,13 @@ public class StartScreenController implements Initializable{
         daoFactory.getLordDAO().createLord(createLordLogin.getText(), createLordPassword1.getText(), createLordPassword2.getText());
     }
 
-    @FXML public boolean handleLoginLord(ActionEvent actionEvent) {
+    @FXML public void handleLoginLord(ActionEvent actionEvent) {
         Lord lord = daoFactory.getLordDAO().connectUser(connectLordLogin.getText(), connectLordPassword.getText());
         if(lord != null) {
-            return true;
+            mainController.currentLord = lord;
+            mainController.showAdventurerScreen();
         }
-        else
-            return false;
+        //mainController.showAdventurerScreen();
     }
 
     public static boolean handleLoginLord() {

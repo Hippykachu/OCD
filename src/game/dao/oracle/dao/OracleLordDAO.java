@@ -4,6 +4,7 @@ import game.dao.entities.Lord;
 import game.dao.interfaces.LordDAO;
 import game.dao.oracle.OracleDAOFactory;
 import game.view.controllers.LayoutController;
+import game.view.controllers.MainController;
 
 import java.sql.*;
 
@@ -30,7 +31,7 @@ public class OracleLordDAO implements LordDAO {
             stm.execute();
             return true;
         } catch (SQLException e) {
-            LayoutController.printError(e.getMessage());
+            MainController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(stm);
         }
@@ -50,7 +51,7 @@ public class OracleLordDAO implements LordDAO {
             int lordID = stm.getInt(1);
             lord = find(lordID);
         } catch (SQLException e) {
-            LayoutController.printError(e.getMessage());
+            MainController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(stm);
         }
@@ -67,7 +68,7 @@ public class OracleLordDAO implements LordDAO {
             stm.execute();
             return true;
         } catch (SQLException e) {
-            LayoutController.printError(e.getMessage());
+            MainController.printError(e.getMessage());
         }
         return false;
     }
@@ -90,7 +91,7 @@ public class OracleLordDAO implements LordDAO {
                 );
             }
         } catch (SQLException e) {
-            LayoutController.printError(e.getMessage());
+            MainController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeResultSet(rs);
             OracleDAOFactory.closeStatement(stm);

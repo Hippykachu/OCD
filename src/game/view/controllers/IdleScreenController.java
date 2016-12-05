@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class IdleScreenController implements Initializable{
+public class IdleScreenController extends SubController implements Initializable{
 
     @FXML private TextField createLordLogin;
     @FXML private TextField createLordPassword;

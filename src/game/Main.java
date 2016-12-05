@@ -14,12 +14,20 @@ import game.view.controllers.MainController;
 
 public class Main extends Application {
 
+    private MainController controller;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage primaryStage) {
 
-        MainController.initLayout();
+        controller = new MainController(primaryStage);
 
-        MainController.showStartScreen();
+        controller.initLayout();
+
+        controller.showStartScreen();
     }
 
 }
@@ -28,10 +36,4 @@ public class Main extends Application {
      * @return
      */
 
-    public Stage getPrimaryStage() {
-        return MainController.primaryStage;
-    }
 
-    public static void main(String[] args) {
-        launch(args);
-    }

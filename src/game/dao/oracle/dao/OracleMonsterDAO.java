@@ -5,6 +5,7 @@ import game.dao.entities.Adventurer;
 import game.dao.entities.Monster;
 import game.dao.oracle.OracleDAOFactory;
 import game.view.controllers.LayoutController;
+import game.view.controllers.MainController;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -46,7 +47,7 @@ public class OracleMonsterDAO implements MonsterDAO{
                 );
             }
         } catch (SQLException e) {
-            LayoutController.printError(e.getMessage());
+            MainController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeResultSet(rs);
             OracleDAOFactory.closeStatement(stm);

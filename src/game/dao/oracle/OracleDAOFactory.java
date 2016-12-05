@@ -16,6 +16,7 @@ import game.dao.oracle.dao.OracleMonsterDAO;
 import game.dao.oracle.dao.OracleInventoryDAO;
 import game.dao.oracle.dao.OracleItemDAO;
 import game.view.controllers.LayoutController;
+import game.view.controllers.MainController;
 
 import java.sql.*;
 
@@ -32,9 +33,9 @@ public class OracleDAOFactory extends DAOFactory {
 
     public OracleDAOFactory() {
         con = getConnection();
-        connectionUrl = "address";
-        username = "username";
-        password = "password";
+        connectionUrl = "172.17.99.2";
+        username = "x1QG1x";
+        password = "lan123";
     }
 
     @Override
@@ -71,12 +72,12 @@ public class OracleDAOFactory extends DAOFactory {
             try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
                 con = DriverManager.getConnection("jdbc:oracle:thin:@" + connectionUrl, username, password);
-                LayoutController.printError("Successfully connected to the database!");
+                MainController.printError("Successfully connected to the database!");
                 return con;
             } catch (ClassNotFoundException e) {
-                LayoutController.printError("Where is your Oracle JDBC Driver?");
+                MainController.printError("Where is your Oracle JDBC Driver?");
             } catch (SQLException e) {
-                LayoutController.printError("Connection to database failed: " + e.getMessage());
+                MainController.printError("Connection to database failed: " + e.getMessage());
             }
             return null;
         } else {
@@ -90,7 +91,7 @@ public class OracleDAOFactory extends DAOFactory {
                 con.close();
             }
         } catch (SQLException e) {
-            LayoutController.printError("Error closing the connection: " + e.getMessage());
+            MainController.printError("Error closing the connection: " + e.getMessage());
         }
     }
 
@@ -100,7 +101,7 @@ public class OracleDAOFactory extends DAOFactory {
                 stm.close();
             }
         } catch (SQLException e) {
-            LayoutController.printError("Error closing statement");
+            MainController.printError("Error closing statement");
         }
     }
 
@@ -110,7 +111,7 @@ public class OracleDAOFactory extends DAOFactory {
                 rs.close();
             }
         } catch (SQLException e) {
-            LayoutController.printError("Error closing resultSet");
+            MainController.printError("Error closing resultSet");
         }
     }
 }

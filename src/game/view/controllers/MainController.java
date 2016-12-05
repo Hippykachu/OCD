@@ -1,6 +1,7 @@
 package game.view.controllers;
 
 import game.Main;
+import game.dao.DAOFactory;
 import game.dao.entities.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,26 +18,20 @@ import java.io.IOException;
 
 public class MainController {
 
-    @FXML
-    private StartScreenController startScreenController;
-    @FXML
-    private AdventurerScreenController adventurerScreenController;
-    @FXML
-    private LayoutController layoutController;
-    @FXML
-    private IdleScreenController idleScreenController;
-    @FXML
-    private InventoryScreenController inventoryScreenController;
-    @FXML
-    private ShopScreenController shopScreenController;
-    @FXML
-    private DeathScreenController deathScreenController;
-
     public Lord currentLord;
     public Adventurer currentAdventurer;
 
-    public Stage primaryStage;
+    private DAOFactory daoFactory;
+    private Stage primaryStage;
     public BorderPane Layout;
+
+    private static LayoutController layoutController;
+
+    public MainController(Stage primaryStage){
+        this.primaryStage = primaryStage;
+        this.daoFactory = DAOFactory.getDAOFactory(DAOFactory.ORACLE);
+    }
+
 
     /*
      * Initializes the layout.
@@ -52,6 +47,11 @@ public class MainController {
             Scene scene = new Scene(Layout);
             primaryStage.setScene(scene);
             primaryStage.show();
+
+            //Give Controller access to main
+            layoutController = loader.getController();
+            layoutController.setMainController(this);
+            layoutController.setDAOFactory(daoFactory);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -70,10 +70,10 @@ public class MainController {
             // Set startScreen into the top of root layout.
             Layout.setTop(StartScreen);
 
-           /*Give Controller access to main
+            //Give Controller access to main
             StartScreenController controller = loader.getController();
-            controller.setMain(this);*/
-
+            controller.setMainController(this);
+            controller.setDAOFactory(daoFactory);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -87,6 +87,11 @@ public class MainController {
 
             // Set startScreen into the top of root layout.
             Layout.setTop(AdventurerScreen);
+
+            //Give Controller access to main
+            SubController controller = loader.getController();
+            controller.setMainController(this);
+            controller.setDAOFactory(daoFactory);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -100,6 +105,11 @@ public class MainController {
 
             // Set startScreen into the top of root layout.
             Layout.setTop(IdleScreen);
+
+            //Give Controller access to main
+            SubController controller = loader.getController();
+            controller.setMainController(this);
+            controller.setDAOFactory(daoFactory);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -113,6 +123,11 @@ public class MainController {
 
             // Set startScreen into the top of root layout.
             Layout.setTop(InventoryScreen);
+
+            //Give Controller access to main
+            SubController controller = loader.getController();
+            controller.setMainController(this);
+            controller.setDAOFactory(daoFactory);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -126,6 +141,11 @@ public class MainController {
 
             // Set startScreen into the top of root layout.
             Layout.setTop(ShopScreen);
+
+            //Give Controller access to main
+            SubController controller = loader.getController();
+            controller.setMainController(this);
+            controller.setDAOFactory(daoFactory);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -139,19 +159,20 @@ public class MainController {
 
             // Set startScreen into the top of root layout.
             Layout.setTop(DeathScreen);
+
+            //Give Controller access to main
+            SubController controller = loader.getController();
+            controller.setMainController(this);
+            controller.setDAOFactory(daoFactory);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    /*
-    Switch between the different screens
-     */
-    public void switchScreenToAdventurer() {
-        if (StartScreenController.handleLoginLord() = true)
-            showAdventurerScreen();
+    public static void printError(String msg) {
+        if(layoutController != null) {
+            layoutController.printError(msg);
+        }
     }
-
-
 }
 

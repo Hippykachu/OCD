@@ -5,6 +5,7 @@ import game.dao.entities.Adventurer;
 import game.dao.entities.Item;
 import game.dao.oracle.OracleDAOFactory;
 import game.view.controllers.LayoutController;
+import game.view.controllers.MainController;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class OracleItemDAO implements ItemDAO {
                 ));
             }
         } catch (SQLException e) {
-            LayoutController.printError(e.getMessage());
+            MainController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeResultSet(rs);
             OracleDAOFactory.closeStatement(stm);

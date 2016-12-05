@@ -1,7 +1,11 @@
 package game.view.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * Created by t00191729 on 30/11/2016.
@@ -9,11 +13,16 @@ import javafx.scene.control.Label;
 
 
 
-public class LayoutController {
+public class LayoutController extends SubController implements Initializable{
 
-    @FXML static Label errorLogLayout;
+    @FXML private Label ErrorLogLayout;
 
-    @FXML public static void printError(String msg) {
-        errorLogLayout.setText(msg);
+    @FXML public void printError(String msg) {
+        ErrorLogLayout.setText(msg);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }

@@ -5,6 +5,7 @@ import game.dao.entities.Entity;
 import game.dao.entities.Item;
 import game.dao.oracle.OracleDAOFactory;
 import game.view.controllers.LayoutController;
+import game.view.controllers.MainController;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -69,7 +70,7 @@ public class OracleInventoryDAO implements InventoryDAO{
                 ));
             }
         } catch (SQLException e) {
-            LayoutController.printError(e.getMessage());
+            MainController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeResultSet(rs);
             OracleDAOFactory.closeStatement(stm);
@@ -88,7 +89,7 @@ public class OracleInventoryDAO implements InventoryDAO{
             stm.execute();
             return true;
         } catch (SQLException e) {
-            LayoutController.printError(e.getMessage());
+            MainController.printError(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(stm);
         }

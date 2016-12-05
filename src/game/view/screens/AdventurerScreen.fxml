@@ -20,12 +20,7 @@
       </Label>
       <Button fx:id="CreateAdventurerButtom" layoutX="98.0" layoutY="279.0" mnemonicParsing="false" text="Create Adventurer" />
       <TextField fx:id="CreateAdventurerName" layoutX="267.0" layoutY="279.0" text="Enter his/her name" />
-      <MenuButton fx:id="SelectAdventurerList" alignment="BOTTOM_RIGHT" contentDisplay="BOTTOM" layoutX="102.0" layoutY="419.0" mnemonicParsing="false" text="Select Adventurer">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-      </MenuButton>
       <Button fx:id="LordDisconnectButton" layoutX="705.0" layoutY="28.0" mnemonicParsing="false" text="Disconnect" />
+      <ComboBox fx:id="SelectAdventurerList" layoutX="98.0" layoutY="423.0" prefWidth="150.0" promptText="Select Adventurer" />
    </children>
 </AnchorPane>

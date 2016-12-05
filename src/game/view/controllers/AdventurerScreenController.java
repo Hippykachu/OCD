@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AdventurerScreenController implements Initializable{
+public class AdventurerScreenController extends SubController implements Initializable{
 
     @FXML private TextField createAdventurerName;
 
