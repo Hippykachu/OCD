@@ -21,18 +21,14 @@ public class StartScreenController extends SubController implements Initializabl
     @FXML private TextField connectLordLogin;
     @FXML private PasswordField connectLordPassword;
 
-    //Reference to the main
-    private Main main;
-
     //DAO Connexion
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
+    public void initialize(URL location, ResourceBundle resources) {}
 
     //Constructor
     @FXML private void handleCreateLord(ActionEvent actionEvent) {
         daoFactory.getLordDAO().createLord(createLordLogin.getText(), createLordPassword1.getText(), createLordPassword2.getText());
+        mainController.printError("Lord successfully created");
     }
 
     @FXML public void handleLoginLord(ActionEvent actionEvent) {
@@ -41,10 +37,10 @@ public class StartScreenController extends SubController implements Initializabl
             mainController.currentLord = lord;
             mainController.showAdventurerScreen();
         }
-        //mainController.showAdventurerScreen();
     }
 
-    public static boolean handleLoginLord() {
-        return handleLoginLord();
+    @Override
+    public void init() {
+
     }
 }

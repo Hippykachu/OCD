@@ -27,4 +27,9 @@ public class InventoryScreenController extends SubController implements Initiali
 
     @FXML private void handleLoginLord(ActionEvent actionEvent) {
     }
+
+    @Override
+    public void init() {
+
+    }
 }

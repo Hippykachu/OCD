@@ -29,4 +29,9 @@ public class DeathScreenController extends SubController implements Initializabl
     @FXML private void handleLoginLord(ActionEvent actionEvent) {
 
     }
+
+    @Override
+    public void init() {
+
+    }
 }

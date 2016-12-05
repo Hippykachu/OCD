@@ -56,4 +56,8 @@ public class Entity {
     public String getStatus() {
         return status;
     }
+
+    public double getHealthProgress(){
+        return health / maxHealth;
+    }
 }

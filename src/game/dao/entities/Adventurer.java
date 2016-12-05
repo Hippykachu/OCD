@@ -53,4 +53,9 @@ public class Adventurer {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString(){
+        return name + " " + status;
+    }
 }

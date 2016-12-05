@@ -12,15 +12,15 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.view.controllers.AdventurerScreenController">
    <children>
-      <TextFlow fx:id="LordNameAdventurerScreen" layoutX="20.0" layoutY="177.0" prefHeight="83.0" prefWidth="760.0" textAlignment="CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
       <Label layoutX="178.0" layoutY="78.0" prefHeight="119.0" prefWidth="585.0" text="WELCOM " textAlignment="CENTER">
          <font>
             <Font size="96.0" />
          </font>
       </Label>
-      <Button fx:id="CreateAdventurerButtom" layoutX="98.0" layoutY="279.0" mnemonicParsing="false" text="Create Adventurer" />
-      <TextField fx:id="CreateAdventurerName" layoutX="267.0" layoutY="279.0" text="Enter his/her name" />
-      <Button fx:id="LordDisconnectButton" layoutX="705.0" layoutY="28.0" mnemonicParsing="false" text="Disconnect" />
-      <ComboBox fx:id="SelectAdventurerList" layoutX="98.0" layoutY="423.0" prefWidth="150.0" promptText="Select Adventurer" />
+      <Button layoutX="98.0" layoutY="279.0" mnemonicParsing="false" onAction="#handleCreateAdventurer" text="Create Adventurer" />
+      <TextField fx:id="createAdventurerName" layoutX="267.0" layoutY="279.0" text="Enter his/her name" />
+      <Button layoutX="705.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleDisconnectButton" text="Disconnect" />
+      <ComboBox fx:id="adventurerList" layoutX="98.0" layoutY="423.0" prefWidth="150.0" promptText="Select Adventurer" />
+      <Label fx:id="lordNameAdventurerScreen" layoutX="82.0" layoutY="202.0" prefHeight="51.0" prefWidth="619.0" text="Lord Name" />
    </children>
 </AnchorPane>

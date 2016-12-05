@@ -92,6 +92,7 @@ public class MainController {
             SubController controller = loader.getController();
             controller.setMainController(this);
             controller.setDAOFactory(daoFactory);
+            controller.init();
         } catch (IOException e) {
             e.printStackTrace();
         }

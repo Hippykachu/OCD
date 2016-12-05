@@ -10,15 +10,15 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.view.controllers.IdleScreenController">
    <children>
-      <Button fx:id="SwitchAdventurerButton" layoutX="673.0" layoutY="14.0" mnemonicParsing="false" text="Switch Adventurer" />
-      <Button fx:id="ShopButton" layoutX="640.0" layoutY="597.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="90.0" text="SHOP" />
-      <Button fx:id="FightButton" layoutX="370.0" layoutY="597.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="90.0" text="FIGHT" />
-      <Button fx:id="FleeButton" layoutX="102.0" layoutY="597.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="90.0" text="FLEE" />
-      <Button fx:id="InventoryButton" layoutX="251.0" layoutY="63.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="83.0" text="Inventory" />
-      <ProgressBar fx:id="AdventurerLife" layoutX="14.0" layoutY="99.0" prefHeight="17.0" prefWidth="237.0" progress="0.0" />
+      <Button layoutX="673.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSwitchAdventurerButton" text="Switch Adventurer" />
+      <Button layoutX="640.0" layoutY="597.0" mnemonicParsing="false" onAction="#handleShopButton" prefHeight="65.0" prefWidth="90.0" text="SHOP" />
+      <Button layoutX="370.0" layoutY="597.0" mnemonicParsing="false" onAction="#handleFightButton" prefHeight="65.0" prefWidth="90.0" text="FIGHT" />
+      <Button layoutX="102.0" layoutY="597.0" mnemonicParsing="false" onAction="#handleFleeButton" prefHeight="65.0" prefWidth="90.0" text="FLEE" />
+      <Button layoutX="251.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleInventoryButton" prefHeight="55.0" prefWidth="83.0" text="Inventory" />
+      <ProgressBar fx:id="idleAdventurerLife" layoutX="14.0" layoutY="99.0" prefHeight="17.0" prefWidth="237.0" progress="0.0" />
       <Label layoutX="460.0" layoutY="40.0" prefHeight="47.0" prefWidth="162.0" text="You are now in the Dungeon" />
-      <Label fx:id="IdleLordName" layoutX="14.0" layoutY="17.0" prefHeight="47.0" prefWidth="320.0" text="Lord Name" />
-      <Label fx:id="IdleAdventurerName" layoutX="14.0" layoutY="63.0" prefHeight="36.0" prefWidth="237.0" text="Adventurer Name" />
+      <Label fx:id="idleLordName" layoutX="14.0" layoutY="17.0" prefHeight="47.0" prefWidth="320.0" text="Lord Name" />
+      <Label fx:id="idleAdventurerName" layoutX="14.0" layoutY="63.0" prefHeight="36.0" prefWidth="237.0" text="Adventurer Name" />
       <Label fx:id="fightResultLabel" layoutX="102.0" layoutY="168.0" prefHeight="403.0" prefWidth="628.0" text="Fight Result" />
    </children>
 </AnchorPane>

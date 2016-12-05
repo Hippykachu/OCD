@@ -18,4 +18,6 @@ public abstract class SubController {
     public void setDAOFactory(DAOFactory daoFactory) {
         this.daoFactory = daoFactory;
     }
+
+    public abstract void init();
 }

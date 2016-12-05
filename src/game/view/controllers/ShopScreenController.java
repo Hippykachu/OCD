@@ -29,4 +29,9 @@ public class ShopScreenController extends SubController implements Initializable
     @FXML private void handleLoginLord(ActionEvent actionEvent) {
 
     }
+
+    @Override
+    public void init() {
+
+    }
 }
