@@ -25,8 +25,12 @@ public class StartScreenController extends SubController implements Initializabl
 
     //Constructor
     @FXML private void handleCreateLord(ActionEvent actionEvent) {
-        daoFactory.getLordDAO().createLord(createLordLogin.getText(), createLordPassword1.getText(), createLordPassword2.getText());
-        mainController.printLog("Lord successfully created");
+        if(daoFactory.getLordDAO().createLord(createLordLogin.getText(), createLordPassword1.getText(), createLordPassword2.getText())){
+            mainController.printLog("Lord successfully created");
+        }
+        else{
+            mainController.printLog("Invalid creation inputs");
+        }
     }
 
     @FXML public void handleLoginLord(ActionEvent actionEvent) {
@@ -34,6 +38,10 @@ public class StartScreenController extends SubController implements Initializabl
         if(lord != null) {
             mainController.currentLord = lord;
             mainController.showAdventurerScreen();
+            mainController.printLog("Lord successfully connected");
+        }
+        else{
+            mainController.printLog("Invalid login inputs");
         }
     }
 

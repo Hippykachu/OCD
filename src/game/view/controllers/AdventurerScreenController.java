@@ -29,11 +29,16 @@ public class AdventurerScreenController extends SubController implements Initial
             mainController.printLog("Adventurer Successfully created");
             adventurerList.getItems().add(0, adventurer);
         }
+        else
+        {
+            mainController.printLog("Invalid adventurer name");
+        }
     }
 
     @FXML private void handleDisconnectButton(ActionEvent actionEvent) {
         mainController.currentLord = null;
         mainController.showStartScreen();
+        mainController.printLog("Lord successfully disconnected");
     }
 
     @Override
@@ -44,6 +49,7 @@ public class AdventurerScreenController extends SubController implements Initial
             if(newValue != null) {
                 mainController.currentAdventurer = newValue;
                 mainController.showIdleScreen();
+                mainController.printLog("Adventurer successfully connected");
             }
         });
     }

@@ -14,7 +14,6 @@ public class IdleScreenController extends SubController implements Initializable
 
     @FXML private Label idleLordName;
     @FXML private Label idleAdventurerName;
-    @FXML private Label fightResultLabel;
 
     @FXML private ProgressBar idleAdventurerLife;
 
@@ -23,10 +22,12 @@ public class IdleScreenController extends SubController implements Initializable
 
 
     @FXML private void handleInventoryButton(ActionEvent actionEvent) {
+        mainController.printLog("Moved into your adventurer inventory/equipment");
         mainController.showInventoryScreen();
     }
 
     @FXML private void handleShopButton(ActionEvent actionEvent) {
+        mainController.printLog("Moved into your adventurer inventory/shop");
         mainController.showShopScreen();
     }
 
@@ -39,16 +40,20 @@ public class IdleScreenController extends SubController implements Initializable
         if(!daoFactory.getAdventurerDAO().nextFight(mainController.currentAdventurer))
         {
             mainController.showDeathScreen();
+            mainController.printLog("Your adventurer is now dead");
         }
         else
         {
             mainController.showlootScreen();
+            Monster monster = daoFactory.getMonsterDAO().getCurrentMonsterOfAdventurer(mainController.currentAdventurer);
+            mainController.printLog("YOU DEFEATED --> " + monster.getMonsterName());
         }
     }
 
     @FXML private void handleSwitchAdventurerButton(ActionEvent actionEvent) {
         mainController.currentAdventurer = null;
         mainController.showAdventurerScreen();
+        mainController.printLog("You are back in the adventurer selection menu");
     }
 
     @Override

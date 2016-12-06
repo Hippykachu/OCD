@@ -45,6 +45,7 @@ public class ShopScreenController extends SubController implements Initializable
 
     @FXML
     private void handleBackShopButton(ActionEvent actionEvent) {
+        mainController.printLog("You moved back in the dungeon");
         mainController.showIdleScreen();
     }
 
@@ -105,11 +106,19 @@ public class ShopScreenController extends SubController implements Initializable
             shopItems.remove(item);
             inventoryItems.add(item);
             updateTables();
-        }}
+            mainController.printLog("Item has been purchased");
+        }
+        else
+            mainController.printLog("You can't do that");
+    }
 
     private void sellItem(Item item) {
         if(daoFactory.getAdventurerDAO().sellItem(mainController.currentAdventurer, item.getItemID())){
             inventoryItems.remove(item);
             updateTables();
-        }}
+            mainController.printLog("Item has been sold");
+        }
+        else
+            mainController.printLog("You can't do that");
+    }
 }

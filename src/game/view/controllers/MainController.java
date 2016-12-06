@@ -3,7 +3,6 @@ package game.view.controllers;
 import game.Main;
 import game.dao.DAOFactory;
 import game.dao.entities.*;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;

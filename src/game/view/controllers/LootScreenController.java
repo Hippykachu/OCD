@@ -4,8 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import game.dao.entities.*;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -36,6 +34,7 @@ public class LootScreenController extends SubController implements Initializable
 
     @FXML
     private void handleCloseLootButton(ActionEvent actionEvent) {
+        mainController.printLog("Ready for the next fight");
         mainController.showIdleScreen();
     }
 
@@ -79,6 +78,9 @@ public class LootScreenController extends SubController implements Initializable
             lootItems.remove(item);
             inventoryItems.add(item);
             updateTables();
+            mainController.printLog("Item has been looted");
         }
+        else
+            mainController.printLog("You can't do that");
     }
 }

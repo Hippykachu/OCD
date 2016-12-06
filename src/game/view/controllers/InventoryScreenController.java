@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import game.dao.entities.Item;
 
@@ -36,6 +35,7 @@ public class InventoryScreenController extends SubController implements Initiali
     }
 
     @FXML private void handleBackInventoryButton(ActionEvent actionEvent) {
+        mainController.printLog("You moved back in the dungeon");
         mainController.showIdleScreen();
     }
 
@@ -91,7 +91,11 @@ public class InventoryScreenController extends SubController implements Initiali
             equipmentItems.remove(item);
             inventoryItems.add(item);
             updateTables();
-        }}
+            mainController.printLog("Item has been unequipped");
+        }
+        else
+            mainController.printLog("You can't do that");
+    }
 
     private void equipItem(Item item) {
         Entity adventurerEntity = daoFactory.getEntityDAO().find(mainController.currentAdventurer.getEntityID());
@@ -99,5 +103,9 @@ public class InventoryScreenController extends SubController implements Initiali
             inventoryItems.remove(item);
             equipmentItems.add(item);
             updateTables();
-        }}
+            mainController.printLog("Item has been equipped");
+        }
+        else
+            mainController.printLog("You can't do that");
+    }
 }
