@@ -11,20 +11,35 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="800" maxWidth="800" minHeight="280.0" minWidth="800" prefHeight="280.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.view.controllers.InventoryScreenController">
+<AnchorPane maxHeight="800" maxWidth="800" minHeight="800.0" minWidth="800" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.view.controllers.LootScreenController">
    <children>
-      <Button layoutX="500.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleCloseLootButton" prefWidth="250.0" text="OCD:&gt;Close">
+      <Button layoutX="536.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleCloseLootButton" prefWidth="250.0" text="OCD:&gt;Close">
       <font>
          <Font name="Courier New Bold" size="24.0" />
       </font></Button>
-      <Label alignment="CENTER" layoutX="50.0" layoutY="14.0" prefHeight="47.0" prefWidth="189.0" text="Monster Loot" textFill="#0eff06">
+      <Label alignment="CENTER" layoutX="14.0" layoutY="15.0" prefHeight="64.0" prefWidth="282.0" text="Monster Loot" textFill="#0eff06">
          <font>
             <Font name="Courier New Bold" size="24.0" />
          </font></Label>
-      <Pane layoutX="50.0" layoutY="69.0" prefHeight="200.0" prefWidth="700.0">
+      <Pane layoutX="50.0" layoutY="160.0" prefHeight="200.0" prefWidth="700.0">
          <children>
-            <fx:include fx:id="equipmentTab" source="TableViews.fxml" />
+            <fx:include fx:id="inventoryTab" source="TableViews.fxml" />
          </children>
       </Pane>
+      <Pane layoutX="57.0" layoutY="477.0" prefHeight="200.0" prefWidth="700.0">
+         <children>
+            <fx:include fx:id="lootTab" source="TableViews.fxml" />
+         </children>
+      </Pane>
+      <Label layoutX="57.0" layoutY="125.0" text="Inventory" textFill="#39ff23">
+         <font>
+            <Font name="Courier New" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="436.0" text="Loot" textFill="#4cff00">
+         <font>
+            <Font name="Courier New" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -39,6 +39,10 @@ public class IdleScreenController extends SubController implements Initializable
         {
             mainController.showDeathScreen();
         }
+        else
+        {
+            mainController.showlootScreen();
+        }
     }
 
     @FXML private void handleSwitchAdventurerButton(ActionEvent actionEvent) {

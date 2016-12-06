@@ -29,6 +29,7 @@ public class MainController {
 
     public MainController(Stage primaryStage){
         this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("Odd Console Dungeon");
         this.daoFactory = DAOFactory.getDAOFactory(DAOFactory.ORACLE);
     }
 
