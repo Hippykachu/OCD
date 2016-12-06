@@ -4,7 +4,6 @@ package game.dao.oracle.dao;
 import game.dao.interfaces.EntityDAO;
 import game.dao.entities.Entity;
 import game.dao.oracle.OracleDAOFactory;
-import game.view.controllers.LayoutController;
 import game.view.controllers.MainController;
 
 import java.sql.*;
@@ -30,7 +29,7 @@ public class OracleEntityDAO implements EntityDAO{
             stm.execute();
             return true;
         } catch (SQLException e) {
-            MainController.printError(e.getMessage());
+            MainController.printLog(e.getMessage());
         } finally {
             OracleDAOFactory.closeStatement(stm);
         }
@@ -59,7 +58,7 @@ public class OracleEntityDAO implements EntityDAO{
                 );
             }
         } catch (SQLException e) {
-            MainController.printError(e.getMessage());
+            MainController.printLog(e.getMessage());
         } finally {
             OracleDAOFactory.closeResultSet(rs);
             OracleDAOFactory.closeStatement(stm);

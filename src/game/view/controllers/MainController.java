@@ -193,7 +193,8 @@ public class MainController {
             e.printStackTrace();
         }
     }
-    public static void printError(String msg) {
+
+    public static void printLog(String msg) {
         if(layoutController != null) {
             layoutController.printError(msg);
         }

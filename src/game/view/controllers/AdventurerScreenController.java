@@ -1,9 +1,6 @@
 package game.view.controllers;
 
-import game.Main;
 import game.dao.entities.Adventurer;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,8 +26,8 @@ public class AdventurerScreenController extends SubController implements Initial
     @FXML private void handleCreateAdventurer(ActionEvent actionEvent) {
         Adventurer adventurer = daoFactory.getAdventurerDAO().createAdventurer(mainController.currentLord, createAdventurerName.getText());
         if(adventurer != null){
-            mainController.printError("Adventurer Successfully created");
-            adventurerList.getItems().add(1, adventurer);
+            mainController.printLog("Adventurer Successfully created");
+            adventurerList.getItems().add(0, adventurer);
         }
     }
 

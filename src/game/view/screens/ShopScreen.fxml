@@ -37,12 +37,12 @@
             </font></Label>
       <Pane layoutX="50.0" layoutY="193.0" maxWidth="700.0" minWidth="700.0" prefHeight="200.0" prefWidth="700.0">
          <children>
-              <fx:include fx:id="inventoryTab" source="TableViews.fxml" />
+              <fx:include fx:id="shopTab" source="TableViews.fxml" />
          </children>
       </Pane>
       <Pane layoutX="50.0" layoutY="494.0" maxWidth="700.0" minWidth="700.0" prefHeight="200.0" prefWidth="700.0">
          <children>
-              <fx:include fx:id="shopTab" source="TableViews.fxml" />
+              <fx:include fx:id="inventoryTab" source="TableViews.fxml" />
          </children>
       </Pane>
      </children>

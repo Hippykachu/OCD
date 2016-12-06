@@ -1,12 +1,10 @@
 package game.view.controllers;
 
-import game.dao.DAOFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import game.Main;
 import game.dao.entities.*;
 
 import java.net.URL;
@@ -28,7 +26,7 @@ public class StartScreenController extends SubController implements Initializabl
     //Constructor
     @FXML private void handleCreateLord(ActionEvent actionEvent) {
         daoFactory.getLordDAO().createLord(createLordLogin.getText(), createLordPassword1.getText(), createLordPassword2.getText());
-        mainController.printError("Lord successfully created");
+        mainController.printLog("Lord successfully created");
     }
 
     @FXML public void handleLoginLord(ActionEvent actionEvent) {

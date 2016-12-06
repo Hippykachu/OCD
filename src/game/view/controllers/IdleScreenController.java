@@ -32,6 +32,7 @@ public class IdleScreenController extends SubController implements Initializable
 
     @FXML private void handleFleeButton(ActionEvent actionEvent) {
          daoFactory.getAdventurerDAO().flee(mainController.currentAdventurer);
+         mainController.printLog("You fled, your weakness knows no limit");
     }
 
     @FXML private void handleFightButton(ActionEvent actionEvent) {

@@ -29,11 +29,6 @@ public class Main extends Application {
 
         controller.showStartScreen();
     }
-
 }
-    /**
-     * Returns the main stage.
-     * @return
-     */
 
 

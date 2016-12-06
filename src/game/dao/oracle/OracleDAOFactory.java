@@ -15,7 +15,6 @@ import game.dao.oracle.dao.OracleEntityDAO;
 import game.dao.oracle.dao.OracleMonsterDAO;
 import game.dao.oracle.dao.OracleInventoryDAO;
 import game.dao.oracle.dao.OracleItemDAO;
-import game.view.controllers.LayoutController;
 import game.view.controllers.MainController;
 
 import java.sql.*;
@@ -73,12 +72,12 @@ public class OracleDAOFactory extends DAOFactory {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
                 con = DriverManager.getConnection("jdbc:oracle:thin:@" + connectionUrl, username, password);
                 //con = DriverManager.getConnection("jdbc:oracle:thin:[hippykachuOCD/ocd]@[//]localhost[:1521][/XE]");
-                MainController.printError("Successfully connected to the database!");
+                MainController.printLog("Successfully connected to the database!");
                 return con;
             } catch (ClassNotFoundException e) {
-                MainController.printError("Where is your Oracle JDBC Driver?");
+                MainController.printLog("Where is your Oracle JDBC Driver?");
             } catch (SQLException e) {
-                MainController.printError("Connection to database failed: " + e.getMessage());
+                MainController.printLog("Connection to database failed: " + e.getMessage());
             }
             return null;
         } else {
@@ -92,7 +91,7 @@ public class OracleDAOFactory extends DAOFactory {
                 con.close();
             }
         } catch (SQLException e) {
-            MainController.printError("Error closing the connection: " + e.getMessage());
+            MainController.printLog("Error closing the connection: " + e.getMessage());
         }
     }
 
@@ -102,7 +101,7 @@ public class OracleDAOFactory extends DAOFactory {
                 stm.close();
             }
         } catch (SQLException e) {
-            MainController.printError("Error closing statement");
+            MainController.printLog("Error closing statement");
         }
     }
 
@@ -112,7 +111,7 @@ public class OracleDAOFactory extends DAOFactory {
                 rs.close();
             }
         } catch (SQLException e) {
-            MainController.printError("Error closing resultSet");
+            MainController.printLog("Error closing resultSet");
         }
     }
 }
