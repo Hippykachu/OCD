@@ -1,47 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane maxHeight="800" maxWidth="800" minHeight="800" minWidth="800" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.view.controllers.IdleScreenController">
    <children>
-      <Button layoutX="422.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleSwitchAdventurerButton" text="OCD:&gt;Switch_Adventurer">
+      <Button layoutX="437.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleSwitchAdventurerButton" text="OCD:&gt;Switch_Adventurer">
          <font>
             <Font name="Courier New Bold" size="24.0" />
          </font></Button>
-      <Button layoutX="470.0" layoutY="680.0" mnemonicParsing="false" onAction="#handleShopButton" prefHeight="55.0" prefWidth="250.0" text="OCD:&gt;SHOP">
+      <Button layoutX="447.0" layoutY="613.0" mnemonicParsing="false" onAction="#handleShopButton" prefHeight="55.0" prefWidth="250.0" text="OCD:&gt;SHOP">
          <font>
             <Font name="Courier New Bold" size="24.0" />
          </font></Button>
-      <Button layoutX="88.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleFightButton" prefHeight="55.0" prefWidth="250.0" text="OCD:&gt;FIGHT">
+      <Button layoutX="94.0" layoutY="483.0" mnemonicParsing="false" onAction="#handleFightButton" prefHeight="55.0" prefWidth="250.0" text="OCD:&gt;FIGHT">
          <font>
             <Font name="Courier New Bold" size="24.0" />
          </font></Button>
-      <Button layoutX="88.0" layoutY="680.0" mnemonicParsing="false" onAction="#handleFleeButton" prefHeight="55.0" prefWidth="250.0" text="OCD:&gt;FLEE">
+      <Button layoutX="94.0" layoutY="613.0" mnemonicParsing="false" onAction="#handleFleeButton" prefHeight="55.0" prefWidth="250.0" text="OCD:&gt;FLEE">
          <font>
             <Font name="Courier New Bold" size="24.0" />
          </font></Button>
-      <Button layoutX="470.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleInventoryButton" prefHeight="55.0" prefWidth="250.0" text="OCD:&gt;Inventory">
+      <Button layoutX="447.0" layoutY="483.0" mnemonicParsing="false" onAction="#handleInventoryButton" prefHeight="55.0" prefWidth="250.0" text="OCD:&gt;Inventory">
          <font>
             <Font name="Courier New Bold" size="24.0" />
          </font></Button>
-      <ProgressBar fx:id="idleAdventurerLife" layoutX="14.0" layoutY="99.0" prefHeight="18.0" prefWidth="354.0" progress="0.44" />
-      <Label alignment="CENTER" layoutX="189.0" layoutY="174.0" prefHeight="47.0" prefWidth="434.0" text="You are in the Dungeon" textFill="#0eff06">
+      <ProgressBar fx:id="idleAdventurerLife" layoutX="14.0" layoutY="99.0" prefHeight="18.0" prefWidth="410.0" progress="0.44" />
+      <Label alignment="CENTER" layoutX="447.0" layoutY="85.0" prefHeight="47.0" prefWidth="339.0" text="You are in the Dungeon" textFill="#0eff06">
          <font>
             <Font name="Courier New Bold" size="24.0" />
          </font></Label>
-      <Label fx:id="idleLordName" layoutX="14.0" layoutY="18.0" prefHeight="47.0" prefWidth="354.0" text="OCD:&gt; Lord Name" textFill="#eb0909">
+      <Label fx:id="idleLordName" layoutX="14.0" layoutY="18.0" prefHeight="47.0" prefWidth="410.0" text="OCD:&gt; Lord Name" textFill="#eb0909">
          <font>
             <Font name="Courier New Bold" size="30.0" />
          </font></Label>
-      <Label fx:id="idleAdventurerName" layoutX="14.0" layoutY="63.0" prefHeight="36.0" prefWidth="354.0" text="OCD:&gt; Adventurer Name" textFill="#14a12e">
+      <Label fx:id="idleAdventurerName" layoutX="14.0" layoutY="63.0" prefHeight="36.0" prefWidth="410.0" text="OCD:&gt; Adventurer Name" textFill="#14a12e">
          <font>
             <Font name="Courier New" size="24.0" />
          </font></Label>
-      <Label fx:id="fightResultLabel" alignment="CENTER" contentDisplay="TOP" layoutX="92.0" layoutY="250.0" prefHeight="335.0" prefWidth="628.0" style="-fx-background-color: black;" text="Fight Result" textFill="#3edd1e">
+      <Label fx:id="fightResultLabel" contentDisplay="TOP" layoutX="122.0" layoutY="199.0" prefHeight="36.0" prefWidth="194.0" style="-fx-background-color: black;" text="Adventurer Level" textFill="#3edd1e">
          <font>
-            <Font name="Courier New" size="14.0" />
+            <Font name="Courier New" size="18.0" />
          </font></Label>
+      <Label fx:id="fightResultLabel1" contentDisplay="TOP" layoutX="122.0" layoutY="235.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Defence" textFill="#3edd1e">
+         <font>
+            <Font name="Courier New" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="fightResultLabel2" contentDisplay="TOP" layoutX="122.0" layoutY="271.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Attack" textFill="#3edd1e">
+         <font>
+            <Font name="Courier New" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="fightResultLabel3" contentDisplay="TOP" layoutX="122.0" layoutY="307.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Critics" textFill="#3edd1e">
+         <font>
+            <Font name="Courier New" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="fightResultLabel4" contentDisplay="TOP" layoutX="25.0" layoutY="163.0" prefHeight="36.0" prefWidth="194.0" style="-fx-background-color: black;" text="Adventurer Stats" textFill="#3edd1e">
+         <font>
+            <Font name="Courier New" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
