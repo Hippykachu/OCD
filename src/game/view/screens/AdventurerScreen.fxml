@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.*?>
@@ -15,7 +16,7 @@
          <font>
             <Font name="Courier New Bold" size="24.0" />
          </font></Button>
-      <TextField fx:id="createAdventurerName" layoutX="459.0" layoutY="315.0" prefHeight="44.0" prefWidth="295.0" text=":Adventurer Name?:">
+      <TextField fx:id="createAdventurerName" layoutX="459.0" layoutY="315.0" prefHeight="44.0" prefWidth="295.0" promptText=":Adventurer Name?:">
          <font>
             <Font name="Courier New Italic" size="24.0" />
          </font></TextField>

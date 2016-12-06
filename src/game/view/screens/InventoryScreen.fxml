@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
@@ -21,7 +22,7 @@
             <Font name="Courier New" size="24.0" />
          </font></Label>
       <Label layoutX="33.0" layoutY="178.0" text="Equipment" textFill="#4dcd16" />
-      <Label layoutX="37.0" layoutY="420.0" text="Inventory" textFill="#1be044" />
+      <Label layoutX="37.0" layoutY="446.0" text="Inventory" textFill="#1be044" />
       <Label alignment="CENTER" layoutX="400.0" layoutY="76.0" prefHeight="47.0" prefWidth="367.0" text="This is your inventory" textFill="#0eff06">
          <font>
             <Font name="Courier New Bold" size="24.0" />

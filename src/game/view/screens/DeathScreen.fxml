@@ -15,7 +15,7 @@
             <Font size="96.0" />
          </font>
       </Label>
-      <Label layoutX="69.0" layoutY="189.0" prefHeight="152.0" prefWidth="569.0" rotate="-21.8" text="Your Adventurer DIED" textFill="#f20303">
+      <Label fx:id="adventurerDeath" layoutX="69.0" layoutY="189.0" prefHeight="152.0" prefWidth="569.0" rotate="-21.8" text="Your Adventurer DIED" textFill="#f20303">
          <font>
             <Font size="48.0" />
          </font>

@@ -60,4 +60,5 @@ public class Entity {
     public double getHealthProgress(){
         return health / maxHealth;
     }
+
 }

@@ -8,12 +8,18 @@ import javafx.scene.control.ProgressBar;
 import game.dao.entities.*;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class IdleScreenController extends SubController implements Initializable{
 
     @FXML private Label idleLordName;
     @FXML private Label idleAdventurerName;
+    @FXML private Label adventurerLevel;
+    @FXML private Label adventurerDefence;
+    @FXML private Label adventurerAttack;
+    @FXML private Label adventurerCritics;
+    @FXML private Label adventurerHealth;
 
     @FXML private ProgressBar idleAdventurerLife;
 
@@ -62,5 +68,27 @@ public class IdleScreenController extends SubController implements Initializable
         idleAdventurerName.setText("Adventurer == " + mainController.currentAdventurer.getName());
         Entity entity = daoFactory.getEntityDAO().find(mainController.currentAdventurer.getEntityID());
         idleAdventurerLife.setProgress(entity.getHealthProgress());
+        updateStatus();
+    }
+
+    public void updateStatus(){
+        double defense = 0;
+        double attack = 0;
+        double critics = 0;
+        double health = 0;
+        Entity adventurerEntity = daoFactory.getEntityDAO().find(mainController.currentAdventurer.getEntityID());
+        List<Item> equipmentItems = daoFactory.getInventoryDAO().getEquipment(adventurerEntity);
+        for(Item item:equipmentItems){
+            health += item.getBonusHealth();
+            defense += item.getBonusDefense();
+            attack += item.getBonusAttack();
+            critics += item.getBonusCritical();
+        }
+
+        adventurerHealth.setText("Health -> " + Math.round(100 + adventurerEntity.getRooms()) * ((health/100)+1));
+        adventurerLevel.setText("Level -> " + Math.round(adventurerEntity.getRooms()));
+        adventurerDefence.setText("Defence -> " + Math.round(adventurerEntity.getRooms() * ((defense/100)+1)));
+        adventurerAttack.setText("Attack -> " + Math.round(adventurerEntity.getRooms() * ((attack/100)+1)));
+        adventurerCritics.setText("Critics -> " + Math.round(adventurerEntity.getRooms() * ((critics/100)+1)));
     }
 }

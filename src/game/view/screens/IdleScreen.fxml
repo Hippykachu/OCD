@@ -40,26 +40,31 @@
          <font>
             <Font name="Courier New" size="24.0" />
          </font></Label>
-      <Label fx:id="fightResultLabel" contentDisplay="TOP" layoutX="122.0" layoutY="199.0" prefHeight="36.0" prefWidth="194.0" style="-fx-background-color: black;" text="Adventurer Level" textFill="#3edd1e">
+      <Label fx:id="adventurerLevel" contentDisplay="TOP" layoutX="122.0" layoutY="199.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Level" textFill="#3edd1e">
          <font>
             <Font name="Courier New" size="18.0" />
          </font></Label>
-      <Label fx:id="fightResultLabel1" contentDisplay="TOP" layoutX="122.0" layoutY="235.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Defence" textFill="#3edd1e">
+      <Label fx:id="adventurerDefence" contentDisplay="TOP" layoutX="122.0" layoutY="271.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Defence" textFill="#3edd1e">
          <font>
             <Font name="Courier New" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="fightResultLabel2" contentDisplay="TOP" layoutX="122.0" layoutY="271.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Attack" textFill="#3edd1e">
+      <Label fx:id="adventurerAttack" contentDisplay="TOP" layoutX="122.0" layoutY="307.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Attack" textFill="#3edd1e">
          <font>
             <Font name="Courier New" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="fightResultLabel3" contentDisplay="TOP" layoutX="122.0" layoutY="307.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Critics" textFill="#3edd1e">
+      <Label fx:id="adventurerCritics" contentDisplay="TOP" layoutX="122.0" layoutY="343.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Critics" textFill="#3edd1e">
          <font>
             <Font name="Courier New" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="fightResultLabel4" contentDisplay="TOP" layoutX="25.0" layoutY="163.0" prefHeight="36.0" prefWidth="194.0" style="-fx-background-color: black;" text="Adventurer Stats" textFill="#3edd1e">
+      <Label contentDisplay="TOP" layoutX="25.0" layoutY="163.0" prefHeight="36.0" prefWidth="194.0" style="-fx-background-color: black;" text="Adventurer Status" textFill="#3edd1e">
+         <font>
+            <Font name="Courier New" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="adventurerHealth" contentDisplay="TOP" layoutX="122.0" layoutY="235.0" prefHeight="36.0" prefWidth="410.0" style="-fx-background-color: black;" text="Adventurer Health" textFill="#3edd1e">
          <font>
             <Font name="Courier New" size="18.0" />
          </font>
