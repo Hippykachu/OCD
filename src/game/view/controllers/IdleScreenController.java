@@ -6,12 +6,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import game.dao.entities.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class IdleScreenController extends SubController implements Initializable{
+
+    String soundFile = "src/resources/pock.mp3";
 
     @FXML private Label idleLordName;
     @FXML private Label idleAdventurerName;
@@ -69,6 +74,9 @@ public class IdleScreenController extends SubController implements Initializable
         Entity entity = daoFactory.getEntityDAO().find(mainController.currentAdventurer.getEntityID());
         idleAdventurerLife.setProgress(entity.getHealthProgress());
         updateStatus();
+        Media sound = new Media(new File(soundFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
     }
 
     public void updateStatus(){

@@ -8,12 +8,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import game.dao.entities.Entity;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class ShopScreenController extends SubController implements Initializable {
+
+    String soundFile = "src/resources/pock.mp3";
 
     @FXML
     private Label shopLordName;
@@ -52,6 +57,9 @@ public class ShopScreenController extends SubController implements Initializable
 
     @Override
     public void init() {
+        Media sound = new Media(new File(soundFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
         shopLordName.setText("Lord == " + mainController.currentLord.getLogin());
         shopAdventurerName.setText("Adventurer == " + mainController.currentAdventurer.getName());
 

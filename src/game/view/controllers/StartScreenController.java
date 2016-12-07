@@ -47,6 +47,5 @@ public class StartScreenController extends SubController implements Initializabl
 
     @Override
     public void init() {
-
     }
 }

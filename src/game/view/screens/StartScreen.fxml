@@ -38,7 +38,7 @@
          </font></PasswordField>
       <ImageView fitHeight="124.0" fitWidth="777.0" layoutX="14.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@/OCDTitle.png" />
+            <Image url="@/resources/OCDTitle.png" />
          </image>
       </ImageView>
    </children>

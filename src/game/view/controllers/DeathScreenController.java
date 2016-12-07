@@ -10,11 +10,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import game.dao.entities.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.io.File;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DeathScreenController extends SubController implements Initializable{
+
+    String soundFile = "src/resources/pock.mp3";
 
     @FXML private Label adventurerDeath;
 
@@ -30,6 +35,9 @@ public class DeathScreenController extends SubController implements Initializabl
 
     @Override
     public void init() {
+        Media sound = new Media(new File(soundFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
         adventurerDeath.setText(mainController.currentAdventurer.getName() + " is DEEEAAAAD");
     }
 }

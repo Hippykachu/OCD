@@ -8,7 +8,10 @@ import game.dao.entities.*;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -17,6 +20,8 @@ import java.util.ResourceBundle;
  * Created by hugoc on 05/12/2016.
  */
 public class LootScreenController extends SubController implements Initializable{
+
+    String soundFile = "src/resources/pock.mp3";
 
     @FXML private AnchorPane lootTab;
     @FXML private AnchorPane inventoryTab;
@@ -43,6 +48,9 @@ public class LootScreenController extends SubController implements Initializable
 
     @Override
     public void init() {
+        Media sound = new Media(new File(soundFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
         Entity adventurerEntity = daoFactory.getEntityDAO().find(mainController.currentAdventurer.getEntityID());
         lootTable = (TableView<Item>) lootTab.getChildren().get(0);
         loadTable(lootTable);

@@ -8,11 +8,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdventurerScreenController extends SubController implements Initializable{
+
+    String soundFile = "src/resources/pock.mp3";
 
     @FXML private TextField createAdventurerName;
     @FXML private Label lordNameAdventurerScreen;
@@ -43,6 +48,9 @@ public class AdventurerScreenController extends SubController implements Initial
 
     @Override
     public void init() {
+        Media sound = new Media(new File(soundFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
         lordNameAdventurerScreen.setText(mainController.currentLord.getLogin());
         adventurerList.setItems(FXCollections.observableArrayList(daoFactory.getAdventurerDAO().getAdventurersOfLord(mainController.currentLord)));
         adventurerList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {

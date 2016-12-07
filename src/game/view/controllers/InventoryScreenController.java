@@ -8,13 +8,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import game.dao.entities.Item;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 
+import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class InventoryScreenController extends SubController implements Initializable{
+
+    String soundFile = "src/resources/pock.mp3";
 
     @FXML private Label inventoryLordName;
     @FXML private Label inventoryAdventurerName;
@@ -41,6 +46,9 @@ public class InventoryScreenController extends SubController implements Initiali
 
     @Override
     public void init() {
+        Media sound = new Media(new File(soundFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
         inventoryLordName.setText("Lord == " + mainController.currentLord.getLogin());
         inventoryAdventurerName.setText("Adventurer == " + mainController.currentAdventurer.getName());
         Entity entity = daoFactory.getEntityDAO().find(mainController.currentAdventurer.getEntityID());
